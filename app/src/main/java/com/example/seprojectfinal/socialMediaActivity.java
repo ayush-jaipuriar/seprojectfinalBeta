@@ -51,7 +51,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
     private Button btnCreatePost;
     private ListView usersListView;
     private Bitmap bitmap;
-    private  String imageIdentifier;
+    private String imageIdentifier;
     private EditText edtDescription;
     private ArrayList<String> usernames;
     private ArrayAdapter adapter;
@@ -67,6 +67,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
         postImageView = findViewById(R.id.postImageView);
         btnCreatePost = findViewById(R.id.btnCreatePost);
         usersListView = findViewById(R.id.usersListView);
+        usersListView.setOnItemClickListener(this);
         edtDescription = findViewById(R.id.edtDescription);
         usernames = new ArrayList<>();
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, usernames);
@@ -107,7 +108,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
         }
 
         if (item.getItemId() == R.id.viewPostsItem) {
-            Intent intent = new Intent(socialMediaActivity.this, ViewPostsActivity.class);
+            Intent intent = new Intent(this, ViewPostsActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
@@ -263,7 +264,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
             public void onComplete(@NonNull Task<Void> task) {
 
                 if (task.isSuccessful()) {
-                    Toast.makeText(socialMediaActivity.this, "Data successfully sent !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(socialMediaActivity.this, "Image successfully sent !", Toast.LENGTH_SHORT).show();
                 }
 
             }

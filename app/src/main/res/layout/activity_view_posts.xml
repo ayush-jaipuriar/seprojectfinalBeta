@@ -1,35 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ViewPostsActivity"
-    android:orientation="vertical">
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".ViewPostsActivity"
+     android:orientation="vertical"
+     android:id="@+id/linearLayout2">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView" />
+     <TextView
+         android:id="@+id/textView2"
+         android:layout_width="223dp"
+         android:layout_height="19dp"
+         android:text="View the users that sent you posts"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:layout_conversion_absoluteHeight="19dp"
+         tools:layout_conversion_absoluteWidth="215dp" />
 
     <ImageView
         android:id="@+id/sentPostsImageView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/placeholder" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/placeholder"
+        tools:layout_conversion_absoluteHeight="150dp"
+        tools:layout_conversion_absoluteWidth="411dp" />
 
     <TextView
         android:id="@+id/txtDesciption"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="TextView" />
+        android:gravity="center_horizontal"
+        android:hint="Here will be the desciption of the app" />
 
     <ListView
-        android:id="@+id/postsListView"
-        android:layout_width="308dp"
-        android:layout_height="548dp"
-        android:layout_marginTop="68dp" />
-</LinearLayout>
+         android:id="@+id/postsListView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         tools:layout_conversion_absoluteHeight="548dp"
+         tools:layout_editor_absoluteY="272dp"
+         tools:layout_editor_absoluteX="0dp"
+         tools:layout_conversion_absoluteWidth="308dp" >
+
+    </ListView>
+ </LinearLayout>

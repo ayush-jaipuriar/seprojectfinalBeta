@@ -25,12 +25,14 @@ public class ViewPostsActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ImageView sentPostImageView;
     private TextView txtDescription;
+    private ArrayList<String> posts;
     private ArrayList<DataSnapshot> dataSnapshots;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_posts);
+        posts = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         postsListView = findViewById(R.id.postsListView);
         usernames = new ArrayList<>();
@@ -42,9 +44,11 @@ public class ViewPostsActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().child("my_users").child(firebaseAuth.getCurrentUser().getUid()).child("received_posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                
                 String fromWhomUsername = (String) dataSnapshot.child("fromWhom").getValue();
                 usernames.add(fromWhomUsername);
                 adapter.notifyDataSetChanged();
+
             }
 
             @Override

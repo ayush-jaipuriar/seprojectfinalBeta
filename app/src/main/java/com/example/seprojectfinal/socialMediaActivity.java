@@ -79,6 +79,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
         postImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 selectImage();
 
             }
@@ -87,6 +88,7 @@ public class socialMediaActivity extends AppCompatActivity implements AdapterVie
         btnCreatePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(socialMediaActivity.this, "Uploading Image To Server...Please Hold On", Toast.LENGTH_LONG).show();
                 uploadImageToServer();
 
             }

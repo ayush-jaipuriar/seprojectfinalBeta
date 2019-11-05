@@ -4,44 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".socialMediaActivity"
-    android:orientation="vertical">
+    android:background="@drawable/watercolour"
+    android:hapticFeedbackEnabled="false"
+    android:orientation="vertical"
+    tools:context=".socialMediaActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="56dp"
-        android:text="Welcome"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/baumans"
+        android:gravity="center"
+        android:hint="Click on the image to select image from the gallery"
+        android:textSize="16dp" />
 
     <ImageView
         android:id="@+id/postImageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="427dp"
+        android:layout_height="250dp"
         android:layout_gravity="center_horizontal"
+        android:hapticFeedbackEnabled="true"
         app:srcCompat="@drawable/placeholder" />
 
     <Button
         android:id="@+id/btnCreatePost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create an Image Post" />
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/watercolour"
+        android:elegantTextHeight="true"
+        android:fontFamily="@font/baumans"
+        android:hapticFeedbackEnabled="true"
+        android:text="Upload Image To Server"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/edtDescription"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:autoText="false"
+        android:elegantTextHeight="true"
         android:ems="10"
-        android:hint="Say something about the image you uploaded..."
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:visibility="invisible" />
+        android:fontFamily="@font/baumans"
+        android:hint="Write image caption here and select person to send it to"
+        android:inputType="textShortMessage|textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="@android:color/widget_edittext_dark"
+        android:visibility="visible" />
 
     <ListView
         android:id="@+id/usersListView"

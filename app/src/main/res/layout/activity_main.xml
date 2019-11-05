@@ -5,63 +5,111 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/watercolour"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Your Email"
-        android:inputType="textPersonName"
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/baumans"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:text="Software Engineering Project"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtUsername"
-        android:layout_width="0dp"
+        android:id="@+id/edtEmail"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:ems="10"
+        android:fontFamily="@font/baumans"
+        android:hint="Enter Your Email"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="393dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/baumans"
         android:hint="Enter Your Username"
         android:inputType="textPersonName"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
-
     <EditText
         android:id="@+id/edtPassword"
-        android:layout_width="0dp"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="@font/baumans"
         android:hint="Enter Your Password"
         android:inputType="textPersonName"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/watercolour"
+        android:capitalize="words"
+        android:elegantTextHeight="true"
+        android:fontFamily="@font/baumans"
+        android:shadowColor="@android:color/black"
         android:text="Sign Up"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnSignIn"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSignIn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <Button
         android:id="@+id/btnSignIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="196dp"
+        android:layout_height="48dp"
+        android:background="@drawable/watercolour"
+        android:capitalize="words"
+        android:elegantTextHeight="true"
+        android:fontFamily="@font/baumans"
+        android:shadowColor="@android:color/black"
         android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSignUp"
         app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginTop="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/watercolour" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

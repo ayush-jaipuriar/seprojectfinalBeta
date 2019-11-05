@@ -1,6 +1,7 @@
 package com.example.seprojectfinal;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ import com.google.firebase.storage.StorageReference;
 //import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
+    ActionBar actionBar;
     EditText edtEmail, edtUsername, edtPassword;
     Button btnSignUP, btnSignIn;
     private FirebaseAuth mAuth;
@@ -33,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        actionBar= getSupportActionBar();
+
+
+
+
         setContentView(R.layout.activity_main);
         edtEmail = findViewById(R.id.edtEmail);
         edtUsername = findViewById(R.id.edtUsername);
@@ -145,4 +153,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,socialMediaActivity.class);
         startActivity(intent);
     }
+
 }

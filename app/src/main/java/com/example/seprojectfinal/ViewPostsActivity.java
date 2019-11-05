@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -15,10 +17,11 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ViewPostsActivity extends AppCompatActivity {
+public class ViewPostsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView postsListView;
     private ArrayList<String> usernames;
     private ArrayAdapter adapter;
@@ -40,11 +43,12 @@ public class ViewPostsActivity extends AppCompatActivity {
         postsListView.setAdapter(adapter);
         sentPostImageView = findViewById(R.id.sentPostsImageView);
         txtDescription = findViewById(R.id.txtDesciption);
-
+        dataSnapshots= new ArrayList<>();
+        postsListView.setOnItemClickListener(this);
         FirebaseDatabase.getInstance().getReference().child("my_users").child(firebaseAuth.getCurrentUser().getUid()).child("received_posts").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                
+                dataSnapshots.add(dataSnapshot);
                 String fromWhomUsername = (String) dataSnapshot.child("fromWhom").getValue();
                 usernames.add(fromWhomUsername);
                 adapter.notifyDataSetChanged();
@@ -72,6 +76,15 @@ public class ViewPostsActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        DataSnapshot myDataSnapShot = dataSnapshots.get(position);
+        String downloadLink = (String) myDataSnapShot.child("imageLink").getValue();
+        Picasso.get().load(downloadLink).into(sentPostImageView);
+        txtDescription.setText((String) myDataSnapShot.child("des").getValue());
 
     }
 }
